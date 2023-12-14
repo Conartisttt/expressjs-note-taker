@@ -23,8 +23,8 @@ api.post('/', (req, res) => {
             const oldDataArr = JSON.parse(data);
             console.log(oldDataArr);
             oldDataArr.push(newNote);
-            fs.writeFile('./db/db.json', JSON.stringify(oldDataArr), (err) =>
-                err ? console.error(err) : console.log('Success!')
+            fs.writeFile('./db/db.json', JSON.stringify(oldDataArr, null, '\t'), (err) =>
+                err ? console.error(err) : res.end() //
             )
         })
     } else {
