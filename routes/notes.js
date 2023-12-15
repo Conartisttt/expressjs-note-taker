@@ -1,8 +1,9 @@
 const api = require('express').Router();
 const uuid = require('../helpers/uuid');
 const fs = require('fs');
+let database = require("../db/db.json")
 
-api.get('/', (req, res) => {
+api.get('/', (req, res, err) => {
     fs.readFile('./db/db.json', 'utf8', (error, data) => res.json(JSON.parse(data)))
 })
 
@@ -24,7 +25,7 @@ api.post('/', (req, res) => {
             console.log(oldDataArr);
             oldDataArr.push(newNote);
             fs.writeFile('./db/db.json', JSON.stringify(oldDataArr, null, '\t'), (err) =>
-                err ? console.error(err) : res.end() //
+                err ? res.status(500).json('Error in posting note') : res.end()
             )
         })
     } else {
@@ -34,4 +35,17 @@ api.post('/', (req, res) => {
 }
 )
 
+api.delete('/:id', (req, res) => {
+    let notesToKeep = [];
+    for (let i = 0; i < database.length; i++) {
+        if (database[i].id != req.params.id) {
+            notesToKeep.push(database[i]);
+        }
+    }
+    database = notesToKeep;
+    fs.writeFileSync('./db/db.json', JSON.stringify(database, null, '\t'), (err) => {
+        err ? res.status(500).json('Error in deleting note') : res.end()
+    })
+    res.json(database);
+})
 module.exports = api;
