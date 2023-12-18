@@ -3,10 +3,12 @@ const uuid = require('../helpers/uuid');
 const fs = require('fs');
 let database = require("../db/db.json")
 
+//API route is a GET route to retrieve all notes from db.json file
 api.get('/', (req, res, err) => {
     fs.readFile('./db/db.json', 'utf8', (error, data) => res.json(JSON.parse(data)))
 })
 
+//API route is a POST route to add a note to the db.json file
 api.post('/', (req, res) => {
     console.log(req.body);
 
@@ -35,6 +37,7 @@ api.post('/', (req, res) => {
 }
 )
 
+//API route is a DELETE route to update the db.json file less the note we deleted
 api.delete('/:id', (req, res) => {
     let notesToKeep = [];
     for (let i = 0; i < database.length; i++) {
