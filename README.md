@@ -6,17 +6,24 @@
 <br>
 [Technologies Used](#technologies-used)
 <br>
-[Installation](#installation)
-<br>
 [Usage](#usage)
 <br>
 [Credits](#credits)
 
 ## Description
 
-The purpose of the application is to 
+The purpose of the application is to write and save notes. It uses an Express.js back end to save and retrieve note data from a JSON file. It is deployed on Heroku.
 
-The following video demonstrates the applications functionality: [Note Taker](insert google drive link here)
+You can find the deployed application ![here](insert link to deployed application here.)
+
+The following screenshots demonstrates the applications functionality: 
+Homepage:
+<br>
+![Note Taker Homepage](./public/assets/images/homepage.png)
+<br>
+Note page:
+<br>
+![Note Taker Note page](./public/assets/images/notepage.png)
 
 ## Technologies Used
 
@@ -28,16 +35,11 @@ The following video demonstrates the applications functionality: [Note Taker](in
 * File System Module
 * Heroku
 
-## Installation
-
-* Install the application by cloning this repository to your local machine.
-* Run ```npm i``` to install dependencies needed for this application
-
 ## Usage
 
-* Start the application by opening terminal and using command: 
-```node server.js```
-* Answer all prompts in your terminal and a custom SVG Logo will be created.
+* To use this application, type in a title and note description; then press Save Note button.
+
+* To delete a note, press the trashcan icon next to the note you would like to delete.
 
 ## Credits
 
