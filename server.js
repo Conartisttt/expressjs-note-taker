@@ -17,12 +17,12 @@ app.use('/api', api)
 
 // GET route established for notes.html page
 app.get('/notes', (req, res) =>
-    res.sendFile(path.join(__dirname, 'public/notes.html'))
+  res.sendFile(path.join(__dirname, 'public/notes.html'))
 );
 
 // GET route established for all other paths to return the index.html page
 app.get('*', (req, res) =>
-    res.sendFile(path.join(__dirname, 'public/index.html'))
+  res.sendFile(path.join(__dirname, 'public/index.html'))
 );
 
 app.listen(PORT, () =>
