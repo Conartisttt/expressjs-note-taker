@@ -12,7 +12,7 @@
 
 ## Description
 
-The purpose of the application is to write and save notes. It uses an Express.js back end to save and retrieve note data from a JSON file. It is deployed on Heroku.
+The purpose of the application is to allow small business owners to write and save notes so that they can orgnaize their thoughts and keep track of tasks needed to be completed. It uses an Express.js back end to save and retrieve note data from a JSON file. It is deployed on Heroku.
 
 You can find the deployed application [here](https://safe-bastion-51547-4080b50e9189.herokuapp.com/)
 
